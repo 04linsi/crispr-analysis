@@ -10,11 +10,15 @@ sequencing noise, or pre-existing genomic variation.
 
 For each guide, data was gather for three samples:
 
-1. A negative control without the guide RNA. This sample shows background mutation in the underlying genome.
-2. A positive control where a standard CRISPR experiment was performed.
-3. A variant case where a CRISPR experiment suspected to have enhanced specificity was performed.
+1. Ctr -A negative control without the guide RNA. This sample shows background mutation in the underlying genome.
+2. NT - A positive control where a standard CRISPR experiment was performed.
+3. SLiCES - A variant case where a CRISPR experiment suspected to have enhanced specificity was performed.
 
-For each sample, the Guide-seq CRISPR sequencing assay was performed on the genomic DNA extracted from treated cell.
+Guide RNAs targeting three genes were analyzed: ZSCAN22, VEGFA, EMX1
+
+All sequencing run metadata is summarized on [SeqReadArchive](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP103075)
+
+For each sample, targeted deep sequencing was performed on the genomic DNA extracted from treated cells at cut sites identified through a specialized assay.
 This assay yields single-ended reads.
 Both the original reads (from SeqReadArchive) and a basic Bowtie2 alignment of these reads are provided.
 The pre-aligned data is provided as a convenience and you may realign the reads if you wish.
@@ -42,3 +46,7 @@ The resulting alignment was then sorted and stored using samtools/htslib.
 
 The data files have been made available on a google cloud storage bucket.
 They can be accessed remotely using their tabix indices via samtools or downloaded locally.
+
+ https://storage.googleapis.com/crispr-analysis-hw/SRR5417067_DeepSeq_ZSCAN_Ctr_1.bam
+ https://storage.googleapis.com/crispr-analysis-hw/SRR5417066_DeepSeq_ZSCAN_SLiCES.sorted.bam
+ https://storage.googleapis.com/crispr-analysis-hw/SRR5417068_DeepSeq_ZSCAN_NT.bam
